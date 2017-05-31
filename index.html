@@ -3,11 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>vue</title>
+    <link rel="stylesheet" href="css/my.css">
 </head>
 <body>
-<div id="app">
-    {{message}}
+<div id="registration">
+    <v-form></v-form>
 </div>
+
+<template id="reg-form">
+    <form action="">
+        <h1>User Registration</h1>
+        <div class="wrap">
+            <div class="block">
+                <label class="control-label" for="login">Login</label>
+                <input type="text" required id="login">
+            </div>
+            <div class="block">
+                <label class="control-label" for="password">Password</label>
+                <input type="password" required id="password" placeholder="* * * * * * * *">
+            </div>
+            <div class="block">
+                <label class="control-label" for="password_confirm">Confirm Password</label>
+                <input type="password" required id="password_confirm" placeholder="* * * * * * * *">
+            </div>
+            <div class="block">
+                <label class="control-label" for="city">City</label>
+                <select required id="city" class="select" v-model="ucity">
+                    <option v-for="item in city">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="block">
+                <label class="control-label" for="gender" >Gender</label>
+                <select id="gender" class="select" required v-model="ugender">
+                    <option v-for="item in gender">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="block">
+                <label class="control-label" for="bloodType">Blood Type</label>
+                <select id="bloodType" class="select" required>
+                    <option v-for="item in bloodType" >{{item}}</option>
+                </select>
+            </div>
+
+            <div class="block">
+                <label class="control-label" for="rhesus">Rhesus Factor</label>
+                <select id="rhesus" class="select" required>
+                    <option v-for="item in rhesus">{{item}}</option>
+                </select>
+            </div>
+
+            <div class="block">
+                <label class="control-label" for="contact">Contact</label>
+                <input type="text" id="contact" required placeholder="Enter E-mail or phone number">
+            </div>
+
+            <div class="block">
+                <label class="control-label" for="info">Information</label>
+                <input type="text" id="info" required>
+            </div>
+            <div class="block">
+                <button type="submit" id="but" class="button">SEND</button>
+            </div>
+        </div>
+    </form>
+</template>
+
 <script src="js/vue.js"></script>
 <script src="js/my.js"></script>
 </body>
